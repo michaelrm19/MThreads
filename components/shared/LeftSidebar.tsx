@@ -10,6 +10,7 @@ import { sidebarLinks } from "@/constants";
 const LeftSidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
+
   const { userId } = useAuth();
 
   return (
@@ -20,7 +21,7 @@ const LeftSidebar = () => {
             (pathname.includes(link.route) && link.route.length > 1) ||
             pathname === link.route;
 
-          if(link.route === '/profile') link.route=`${link.route}/${userId}`
+          if (link.route === "/profile") link.route = `${link.route}/${userId}`;
 
           return (
             <Link
